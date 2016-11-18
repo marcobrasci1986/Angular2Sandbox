@@ -6,11 +6,14 @@ import {AppComponent} from "./app.component";
 import {MaterialModule} from "@angular/material";
 import {RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
+import {CharacterComponent} from "./character/character.component";
+import {CharacterService} from "./character/character.service";
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    CharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -18,10 +21,12 @@ import {HomeComponent} from "./home/home.component";
     HttpModule,
     MaterialModule.forRoot(),
     RouterModule.forRoot([
-      {path: '', component: HomeComponent},
+      {path: 'home', component: HomeComponent},
+      {path: 'character', component: CharacterComponent},
+      {path: '**', component: HomeComponent}
     ]),
   ],
-  providers: [],
+  providers: [CharacterService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

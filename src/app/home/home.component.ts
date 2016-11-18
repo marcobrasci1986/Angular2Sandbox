@@ -1,5 +1,4 @@
-import {Component, OnInit, Optional} from "@angular/core";
-import {MdDialog, MdSnackBar, MdDialogRef} from "@angular/material";
+import {Component, OnInit} from "@angular/core";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +6,7 @@ import {MdDialog, MdSnackBar, MdDialogRef} from "@angular/material";
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
+  title:string = "Home page";
 
 
   ngOnInit():void {
