@@ -1,4 +1,4 @@
-import {Component} from "@angular/core";
+import {Component, OnInit} from "@angular/core";
 import {Character} from "./character";
 import {CharacterService} from "./character.service";
 
@@ -7,19 +7,23 @@ import {CharacterService} from "./character.service";
   templateUrl: './character.component.html',
   styleUrls: ['./character.component.css']
 })
-export class CharacterComponent {
+export class CharacterComponent implements OnInit {
 
 
   title:string = "Character page";
   characters:Array<Character>;
+  selectedCharacter:Character;
 
   constructor(private characterService:CharacterService) {
-    this.characters = this.characterService.getCharacters();
   }
 
 
+  ngOnInit():void {
+    this.characters = this.characterService.getCharacters();
+  }
+
   select(character:Character) {
-    console.log('You selected: ' + character.name);
+    this.selectedCharacter = character;
   }
 
 }

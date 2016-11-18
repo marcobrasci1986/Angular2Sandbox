@@ -8,12 +8,21 @@ import {RouterModule} from "@angular/router";
 import {HomeComponent} from "./home/home.component";
 import {CharacterComponent} from "./character/character.component";
 import {CharacterService} from "./character/character.service";
+import { SelectedCharacterComponent } from './character/selected-character/selected-character.component';
 
+
+/**
+ * providers -> Services, Pipes ...
+ * declarations -> Custom components
+ * imports -> External components
+ *
+ */
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    CharacterComponent
+    CharacterComponent,
+    SelectedCharacterComponent
   ],
   imports: [
     BrowserModule,
